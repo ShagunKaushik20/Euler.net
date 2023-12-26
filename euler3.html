@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       /* function largestFactor(num){
+           let  factor = 1;
+            for(let i = 2;i<num;i++){
+                if(num%i == 0||i>factor ){
+                    factor=i;
+                }
+            }
+            return factor;
+        }
+        console.log(largestFactor(600851475143));*/
+        function largestPrimeFactor(number) {
+  let factor = 2;
+
+  while (factor <= number) {
+    if (number % factor === 0) {
+      number /= factor;
+    } else {
+      factor++;
+    }
+  }
+
+  return factor;
+}
+
+const targetNumber = 600851475143;
+const result = largestPrimeFactor(targetNumber);
+
+console.log("Largest prime factor of", targetNumber, "is:", result);
+    </script>
+</body>
+</html>
